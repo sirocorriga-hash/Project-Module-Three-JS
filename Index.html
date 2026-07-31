@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +26,8 @@
           <h1>My Library</h1>
         </div>
         <div class="d-flex gap-2">
+          <button class="btn btn-outline-light btn-sm fw-semibold" id="btnImport"><i class="bi bi-upload me-1"></i>Import JSON</button>
+          <input type="file" id="fileImport" accept="application/json,.json" hidden>
           <button class="btn btn-outline-light btn-sm fw-semibold" id="btnExport"><i class="bi bi-download me-1"></i>Export JSON</button>
           <button class="btn btn-light fw-semibold" id="btnNew"><i class="bi bi-plus-lg me-1"></i>Add Book</button>
         </div>
@@ -143,6 +144,38 @@
             <button type="submit" class="btn btn-gold">Save book</button>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMPORT MODAL -->
+  <div class="modal fade" id="importModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title display-face">Import books</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-3" id="importSummary"></p>
+          <div class="d-grid gap-2">
+            <button class="btn btn-gold text-start" data-mode="update">
+              Update and add
+              <span class="d-block small fw-normal opacity-75">Overwrite the books already on the shelf, add the new ones.</span>
+            </button>
+            <button class="btn btn-outline-gold text-start" data-mode="add">
+              Add new only
+              <span class="d-block small fw-normal">Leave the current books untouched.</span>
+            </button>
+            <button class="btn btn-outline-danger text-start" data-mode="replace">
+              Replace everything
+              <span class="d-block small fw-normal">Discard the current catalogue.</span>
+            </button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-link text-secondary text-decoration-none" data-bs-dismiss="modal">Cancel</button>
+        </div>
       </div>
     </div>
   </div>

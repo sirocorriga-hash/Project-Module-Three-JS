@@ -5,34 +5,9 @@
 const STORAGE_KEY = "uk_library_catalog";
 
 const DEFAULT_BOOKS = [
-  { id: 101, title: "Nineteen Eighty-Four", author: "George Orwell", genre: "Fiction", year: 1949, isbn: "978-0141036144", shelfmark: "A-01", status: "available", borrower: "Matthew" },
-  { id: 102, title: "Pride and Prejudice", author: "Jane Austen", genre: "Fiction", year: 1813, isbn: "978-0141439518", shelfmark: "A-02", status: "available", borrower: "Emma" },
-  { id: 103, title: "The Hobbit", author: "J.R.R. Tolkien", genre: "Fantasy", year: 1937, isbn: "978-0261102217", shelfmark: "B-03", status: "loaned", borrower: "Marta" },
-  { id: 104, title: "A Brief History of Time", author: "Stephen Hawking", genre: "Science", year: 1988, isbn: "978-0553380163", shelfmark: "C-04", status: "available", borrower: "James" },
-  { id: 105, title: "The Great Gatsby", author: "F. Scott Fitzgerald", genre: "Fiction", year: 1925, isbn: "978-0743273565", shelfmark: "A-05", status: "available", borrower: "Olivia" },
-  { id: 106, title: "To Kill a Mockingbird", author: "Harper Lee", genre: "Fiction", year: 1960, isbn: "978-0061120084", shelfmark: "A-06", status: "loaned", borrower: "John" },
-  { id: 107, title: "The Catcher in the Rye", author: "J.D. Salinger", genre: "Fiction", year: 1951, isbn: "978-0316769488", shelfmark: "A-07", status: "available", borrower: "Marco" },
-  { id: 108, title: "The Lord of the Rings", author: "J.R.R. Tolkien", genre: "Fantasy", year: 1954, isbn: "978-0261102385", shelfmark: "B-08", status: "available", borrower: "Andrea" },    
-  { id: 109, title: "The Da Vinci Code", author: "Dan Brown", genre: "Thriller", year: 2003, isbn: "978-0307474278", shelfmark: "D-09", status: "available", borrower: "Sophie" },
-  { id: 110, title: "The Alchemist", author: "Paulo Coelho", genre: "Fiction", year: 1988, isbn: "978-0061122415", shelfmark: "A-10", status: "available", borrower: "Lucas" },
-  { id: 111, title: "The Girl with the Dragon Tattoo", author: "Stieg Larsson", genre: "Mystery", year: 2005, isbn: "978-0307949486", shelfmark: "E-11", status: "available", borrower: "Isabella" },
-  { id: 112, title: "The Hunger Games", author: "Suzanne Collins", genre: "Dystopian", year: 2008, isbn: "978-0439023528", shelfmark: "F-12", status: "available", borrower: "Liam" },
-  { id: 113, title: "The Fault in Our Stars", author: "John Green", genre: "Young Adult", year: 2012, isbn: "978-0142424179", shelfmark: "G-13", status: "available", borrower: "Maria" },
-  { id: 114, title: "The Shining", author: "Stephen King", genre: "Horror", year: 1977, isbn: "978-0307743657", shelfmark: "H-14", status: "available", borrower: "Siro" },
-  { id: 115, title: "The Chronicles of Narnia", author: "C.S. Lewis", genre: "Fantasy", year: 1950, isbn: "978-0066238500", shelfmark: "B-15", status: "available", borrower: "Doirean" },
-  { id: 116, title: "The Kite Runner", author: "Khaled Hosseini", genre: "Fiction", year: 2003, isbn: "978-1594631931", shelfmark: "A-16", status: "available", borrower: "Ahmed" },
-  { id: 117, title: "The Book Thief", author: "Markus Zusak", genre: "Historical Fiction", year: 2005, isbn: "978-0375842207", shelfmark: "I-17", status: "available", borrower: "Lena" },
-  { id: 118, title: "The Road", author: "Cormac McCarthy", genre: "Post-Apocalyptic", year: 2006, isbn: "978-0307387899", shelfmark: "J-18", status: "available", borrower: "Thomas" },
-  { id: 119, title: "The Handmaid's Tale", author: "Margaret Atwood", genre: "Dystopian", year: 1985, isbn: "978-0385490818", shelfmark: "K-19", status: "available", borrower: "Sarah" },
-  { id: 120, title: "The Hitchhiker's Guide to the Galaxy", author: "Douglas Adams", genre: "Science Fiction", year: 1979, isbn: "978-0345391803", shelfmark: "L-20", status: "available", borrower: "David" },
-  { id: 121, title: "The Picture of Dorian Gray", author: "Oscar Wilde", genre: "Fiction", year: 1890, isbn: "978-0141439570", shelfmark: "A-21", status: "available", borrower: "" },
-  { id: 122, title: "The Color Purple", author: "Alice Walker", genre: "Fiction", year: 1982, isbn: "978-0156028356", shelfmark: "A-22", status: "available", borrower: "" },
-  { id: 123, title: "The Bell Jar", author: "Sylvia Plath", genre: "Fiction", year: 1963, isbn: "978-0060837020", shelfmark: "A-23", status: "available", borrower: "" },
-  { id: 124, title: "The Secret Garden", author: "Frances Hodgson Burnett", genre: "Children's Literature", year: 1911, isbn: "978-0064401883", shelfmark: "M-24", status: "available", borrower: "" },
-  { id: 125, title: "The Odyssey", author: "Homer", genre: "Epic Poetry", year: -800, isbn: "978-0140268867", shelfmark: "N-25", status: "available", borrower: "" },
-  { id: 126, title: "The Iliad", author: "Homer", genre: "Epic Poetry", year: -750, isbn: "978-0140275360", shelfmark: "N-26", status: "available", borrower: "Ravi" },
-  { id: 127, title: "The Divine Comedy", author: "Dante Alighieri", genre: "Epic Poetry", year: 1320, isbn: "978-0140448955", shelfmark: "O-27", status: "available", borrower: "" },
-  { id: 128, title: "The Canterbury Tales", author: "Geoffrey Chaucer", genre: "Poetry", year: 1400, isbn: "978-0140424386", shelfmark: "P-28", status: "available", borrower: "" },
+  { id: 101, title: "Nineteen Eighty-Four", author: "George Orwell", genre: "Fiction", year: 1949, isbn: "978-0141036144", shelfmark: "A-01", status: "available", borrower: "" },
+  { id: 102, title: "Pride and Prejudice", author: "Jane Austen", genre: "Fiction", year: 1813, isbn: "978-0141439518", shelfmark: "A-02", status: "available", borrower: "" },
+  { id: 103, title: "The Hobbit", author: "J.R.R. Tolkien", genre: "Fantasy", year: 1937, isbn: "978-0261102217", shelfmark: "B-03", status: "loaned", borrower: "Marta" }
 ];
 
 const $ = selector => document.querySelector(selector);
@@ -60,11 +35,16 @@ function saveData() {
   }
 }
 
+/* Unique id even when several records are created in the same millisecond. */
+let idCounter = 0;
+const makeId = () => Number(`${Date.now()}${String(idCounter++ % 1000).padStart(3, "0")}`);
+
 /* Fill in fields older records may be missing, and coerce types. */
 function normalise(book) {
   const year = parseInt(book.year, 10);
+  const id = Number(book.id);
   return {
-    id: book.id ?? Date.now(),
+    id: Number.isFinite(id) ? id : makeId(),
     title: String(book.title ?? "").trim(),
     author: String(book.author ?? "").trim(),
     genre: String(book.genre ?? "").trim(),
@@ -236,7 +216,7 @@ $("#bookForm").addEventListener("submit", e => {
   }
 
   const record = normalise({
-    id: $("#fieldId").value ? Number($("#fieldId").value) : Date.now(),
+    id: $("#fieldId").value ? Number($("#fieldId").value) : makeId(),
     title: $("#fieldTitle").value,
     author: $("#fieldAuthor").value,
     genre: $("#fieldGenre").value,
@@ -327,5 +307,152 @@ $("#btnExport").addEventListener("click", () => {
   URL.revokeObjectURL(url);
   notify(`Exported ${books.length} ${books.length === 1 ? "book" : "books"}.`);
 });
+
+/* --------------------------------------------------------------------------
+   Import
+   -------------------------------------------------------------------------- */
+
+/* A record is usable only if it has at least a title or an author. */
+const looksLikeBook = value =>
+  value && typeof value === "object" && !Array.isArray(value)
+  && (String(value.title ?? "").trim() || String(value.author ?? "").trim());
+
+/* Same title + same author = same book, regardless of id. */
+const fingerprint = b => `${b.title.toLowerCase()}|${b.author.toLowerCase()}`;
+
+function readFile(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = () => reject(new Error("The file could not be read."));
+    reader.readAsText(file);
+  });
+}
+
+function parseCatalogue(text) {
+  let data;
+  try {
+    data = JSON.parse(text);
+  } catch {
+    throw new Error("This is not a valid JSON file.");
+  }
+  // Accept both a bare array and an object wrapping one, e.g. { books: [...] }.
+  const list = Array.isArray(data) ? data : data?.books;
+  if (!Array.isArray(list)) throw new Error("The file does not contain a list of books.");
+
+  const usable = list.filter(looksLikeBook).map(normalise);
+  if (!usable.length) throw new Error("No readable book was found in the file.");
+  return usable;
+}
+
+/* Index of what is already on the shelf, keyed by fingerprint. */
+function indexByFingerprint() {
+  const map = new Map();
+  books.forEach((book, position) => map.set(fingerprint(book), position));
+  return map;
+}
+
+function countOverlap(incoming) {
+  const known = indexByFingerprint();
+  const matched = incoming.filter(b => known.has(fingerprint(b))).length;
+  return { matched, fresh: incoming.length - matched };
+}
+
+/* mode: "replace" wipes first, "add" skips known books, "update" overwrites them. */
+function applyImport(incoming, mode) {
+  if (mode === "replace") {
+    books = incoming;
+    return { added: incoming.length, updated: 0 };
+  }
+
+  const known = indexByFingerprint();
+  const usedIds = new Set(books.map(b => b.id));
+  let added = 0, updated = 0;
+
+  for (const book of incoming) {
+    const position = known.get(fingerprint(book));
+
+    if (position === undefined) {
+      if (usedIds.has(book.id)) book.id = makeId();
+      usedIds.add(book.id);
+      known.set(fingerprint(book), books.length);
+      books.push(book);
+      added++;
+    } else if (mode === "update") {
+      // Keep the existing id so edits and deletions still target the right card.
+      const current = books[position];
+      const merged = { ...book, id: current.id };
+      if (JSON.stringify(merged) !== JSON.stringify(current)) {
+        books[position] = merged;
+        updated++;
+      }
+    }
+  }
+  return { added, updated };
+}
+
+function describeResult({ added, updated }) {
+  const parts = [];
+  if (added) parts.push(`${added} added`);
+  if (updated) parts.push(`${updated} updated`);
+  return parts.length ? `Import complete: ${parts.join(", ")}.` : "Nothing changed.";
+}
+
+/* --------------------------------------------------------------------------
+   Import — file picker, then the three-way dialog
+   -------------------------------------------------------------------------- */
+
+const importModal = new bootstrap.Modal("#importModal");
+let pendingImport = null;
+
+$("#btnImport").addEventListener("click", () => $("#fileImport").click());
+
+$("#fileImport").addEventListener("change", async e => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  try {
+    const incoming = parseCatalogue(await readFile(file));
+
+    // Empty shelf: no decision to make.
+    if (!books.length) {
+      const result = applyImport(incoming, "replace");
+      saveData();
+      renderUI();
+      notify(describeResult(result));
+      return;
+    }
+
+    const { matched, fresh } = countOverlap(incoming);
+    pendingImport = incoming;
+    $("#importSummary").textContent =
+      `${file.name} contains ${incoming.length} ${incoming.length === 1 ? "book" : "books"}: `
+      + `${matched} already on your shelf, ${fresh} new. How should they be applied?`;
+    importModal.show();
+  } catch (error) {
+    notify(error.message);
+  } finally {
+    // Reset, otherwise re-selecting the same file fires no change event.
+    e.target.value = "";
+  }
+});
+
+$("#importModal").addEventListener("click", e => {
+  const button = e.target.closest("button[data-mode]");
+  if (!button || !pendingImport) return;
+
+  const mode = button.dataset.mode;
+  if (mode === "replace" && !confirm(`Discard the ${books.length} books currently on the shelf?`)) return;
+
+  const result = applyImport(pendingImport, mode);
+  pendingImport = null;
+  saveData();
+  renderUI();
+  importModal.hide();
+  notify(describeResult(result));
+});
+
+$("#importModal").addEventListener("hidden.bs.modal", () => { pendingImport = null; });
+
 
 renderUI();

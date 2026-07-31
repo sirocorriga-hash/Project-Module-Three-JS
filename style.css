@@ -1,7 +1,7 @@
 /* ==========================================================================
    My Library — stylesheet
    ========================================================================== */
- 
+
 /* Design tokens */
 :root {
   --paper:        #EFEDE6;
@@ -13,30 +13,30 @@
   --border:       #DAD6C9;
   --grey:         #6B7269;
 }
- 
+
 /* Base */
 body {
   background: var(--paper);
   color: var(--ink);
   font-family: 'Karla', system-ui, sans-serif;
 }
- 
+
 h1, h2, h3, .display-face {
   font-family: 'Fraunces', Georgia, serif;
   letter-spacing: -.01em;
 }
- 
+
 .mono { font-family: 'IBM Plex Mono', monospace; }
- 
+
 /* Header */
 .header-bg {
   background: var(--binding);
   color: #F3F1E8;
   border-bottom: 3px solid var(--brass);
 }
- 
+
 .header-bg h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin: 0; font-weight: 700; }
- 
+
 .eyebrow {
   font-size: .72rem;
   text-transform: uppercase;
@@ -44,7 +44,7 @@ h1, h2, h3, .display-face {
   color: var(--brass);
   font-weight: 700;
 }
- 
+
 /* Stats & Toolbar */
 .stat, .toolbar {
   background: var(--paper-top);
@@ -52,20 +52,20 @@ h1, h2, h3, .display-face {
   border-radius: .5rem;
   padding: .85rem 1rem;
 }
- 
+
 .stat .number { font-family: 'Fraunces', serif; font-size: 1.75rem; font-weight: 700; line-height: 1; }
 .stat .label { font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--grey); }
- 
+
 /* Form controls */
 .form-control, .form-select { background: #fff; border-color: var(--border); color: var(--ink); }
 .form-control:focus, .form-select:focus { border-color: var(--binding); box-shadow: 0 0 0 .2rem rgba(47,93,80,.18); }
- 
+
 /* Buttons */
 .btn-gold { background: var(--binding); border-color: var(--binding); color: #F7F5F0; font-weight: 600; }
 .btn-gold:hover { background: var(--binding-dark); border-color: var(--binding-dark); color: #fff; }
 .btn-outline-gold { border-color: var(--binding); color: var(--binding); font-weight: 600; }
 .btn-outline-gold:hover { background: var(--binding); color: #fff; }
- 
+
 /* Cards */
 .card-book {
   display: flex;
@@ -76,9 +76,9 @@ h1, h2, h3, .display-face {
   height: 100%;
   transition: transform .15s ease, box-shadow .15s ease;
 }
- 
+
 .card-book:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(29,38,33,.10); }
- 
+
 .spine {
   flex: 0 0 46px;
   background: var(--binding);
@@ -89,7 +89,7 @@ h1, h2, h3, .display-face {
   border-right: 2px solid rgba(0,0,0,.15);
   position: relative;
 }
- 
+
 .shelfmark {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -98,11 +98,11 @@ h1, h2, h3, .display-face {
   letter-spacing: .14em;
   white-space: nowrap;
 }
- 
+
 .card-body-custom { padding: .9rem 1rem; flex: 1 1 auto; display: flex; flex-direction: column; gap: .35rem; }
 .book-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.05rem; line-height: 1.25; margin: 0; }
 .author, .meta { font-size: .85rem; color: var(--grey); margin: 0; }
- 
+
 /* Status badges */
 .badge-status {
   font-size: .7rem;
@@ -113,14 +113,14 @@ h1, h2, h3, .display-face {
   border-radius: .25rem;
   border: 1px solid;
 }
- 
+
 .badge-available { color: var(--binding); border-color: rgba(47,93,80,.4); background: rgba(47,93,80,.08); }
 .badge-loaned { color: #8A5A16; border-color: rgba(201,162,39,.5); background: rgba(201,162,39,.14); }
- 
+
 /* Card actions */
 .card-actions { display: flex; align-items: center; gap: .25rem; flex-wrap: wrap; }
 .card-actions .btn { --bs-btn-padding-y: .15rem; --bs-btn-padding-x: .5rem; font-size: .78rem; }
- 
+
 /* Empty state, modal, toast */
 .empty-state {
   border: 1px dashed var(--border);
@@ -129,13 +129,13 @@ h1, h2, h3, .display-face {
   text-align: center;
   background: var(--paper-top);
 }
- 
+
 .icon-brass { color: var(--brass); }
- 
+
 .modal-content { background: var(--paper-top); border: 1px solid var(--border); }
- 
+
 .toast-app { background: var(--binding); color: #fff; }
- 
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .card-book { transition: none; }
