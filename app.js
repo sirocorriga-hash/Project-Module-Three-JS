@@ -1,6 +1,7 @@
-/* ==========================================================================
+/*
    My Library — application logic
-   ========================================================================== */
+    
+*/
 
 const STORAGE_KEY = "uk_library_catalog";
 
@@ -12,9 +13,10 @@ const DEFAULT_BOOKS = [
 
 const $ = selector => document.querySelector(selector);
 
-/* --------------------------------------------------------------------------
-   Storage — never let a blocked or full localStorage break the app
-   -------------------------------------------------------------------------- */
+/*
+   Storage — never let a blocked or full localStorage break the app 
+   
+*/
 
 function loadData() {
   try {
@@ -59,9 +61,9 @@ function normalise(book) {
 let books = loadData();
 const state = { search: "", genre: "", status: "", sortBy: "title" };
 
-/* --------------------------------------------------------------------------
+/* 
    Helpers
-   -------------------------------------------------------------------------- */
+*/
 
 const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, ch => (
   { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]
@@ -100,9 +102,9 @@ function notify(message) {
   toast.show();
 }
 
-/* --------------------------------------------------------------------------
+/* 
    Rendering
-   -------------------------------------------------------------------------- */
+ */
 
 function renderStats() {
   const loaned = books.filter(b => b.status === "loaned").length;
@@ -119,7 +121,6 @@ function renderGenreFilter() {
     + genres.map(g => `<option value="${escapeHtml(g)}">${escapeHtml(g)}</option>`).join("");
   $("#filterGenre").value = state.genre;
 
-  // Same list offered as suggestions inside the form.
   $("#genreOptions").innerHTML = genres.map(g => `<option value="${escapeHtml(g)}">`).join("");
 }
 
@@ -174,9 +175,9 @@ function renderUI() {
   }
 }
 
-/* --------------------------------------------------------------------------
+/* 
    Modal — create and edit
-   -------------------------------------------------------------------------- */
+ */
 
 const bookModal = new bootstrap.Modal("#bookModal");
 
@@ -287,9 +288,9 @@ $("#grid").addEventListener("click", e => {
   }
 });
 
-/* --------------------------------------------------------------------------
+/* 
    Export
-   -------------------------------------------------------------------------- */
+ */
 
 $("#btnExport").addEventListener("click", () => {
   if (!books.length) {
@@ -308,9 +309,9 @@ $("#btnExport").addEventListener("click", () => {
   notify(`Exported ${books.length} ${books.length === 1 ? "book" : "books"}.`);
 });
 
-/* --------------------------------------------------------------------------
+/* 
    Import
-   -------------------------------------------------------------------------- */
+ */
 
 /* A record is usable only if it has at least a title or an author. */
 const looksLikeBook = value =>
@@ -398,9 +399,9 @@ function describeResult({ added, updated }) {
   return parts.length ? `Import complete: ${parts.join(", ")}.` : "Nothing changed.";
 }
 
-/* --------------------------------------------------------------------------
+/*
    Import — file picker, then the three-way dialog
-   -------------------------------------------------------------------------- */
+*/
 
 const importModal = new bootstrap.Modal("#importModal");
 let pendingImport = null;

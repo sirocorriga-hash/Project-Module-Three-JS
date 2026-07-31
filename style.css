@@ -141,3 +141,12 @@ h1, h2, h3, .display-face {
   .card-book { transition: none; }
   .card-book:hover { transform: none; }
 }
+/* Footer */
+.site-footer {
+  background: var(--binding);
+  color: #F3F1E8;
+  border-top: 3px solid var(--brass);
+}
+
+.footer-mark { font-size: 1rem; font-weight: 700; }
+.footer-note { font-size: .82rem; color: rgba(243,241,232,.75); }
