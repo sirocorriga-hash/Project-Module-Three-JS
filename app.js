@@ -13,10 +13,7 @@ const DEFAULT_BOOKS = [
 
 const $ = selector => document.querySelector(selector);
 
-/*
-   Storage — never let a blocked or full localStorage break the app 
-   
-*/
+
 
 function loadData() {
   try {
@@ -37,11 +34,10 @@ function saveData() {
   }
 }
 
-/* Unique id even when several records are created in the same millisecond. */
+
 let idCounter = 0;
 const makeId = () => Number(`${Date.now()}${String(idCounter++ % 1000).padStart(3, "0")}`);
 
-/* Fill in fields older records may be missing, and coerce types. */
 function normalise(book) {
   const year = parseInt(book.year, 10);
   const id = Number(book.id);
@@ -61,9 +57,7 @@ function normalise(book) {
 let books = loadData();
 const state = { search: "", genre: "", status: "", sortBy: "title" };
 
-/* 
-   Helpers
-*/
+
 
 const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, ch => (
   { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]
@@ -175,9 +169,6 @@ function renderUI() {
   }
 }
 
-/* 
-   Modal — create and edit
- */
 
 const bookModal = new bootstrap.Modal("#bookModal");
 
@@ -242,9 +233,9 @@ $("#bookForm").addEventListener("submit", e => {
   bookModal.hide();
 });
 
-/* --------------------------------------------------------------------------
+/* 
    Toolbar and card actions
-   -------------------------------------------------------------------------- */
+  */
 
 $("#search").addEventListener("input", e => { state.search = e.target.value; renderUI(); });
 $("#filterGenre").addEventListener("change", e => { state.genre = e.target.value; renderUI(); });
@@ -288,9 +279,7 @@ $("#grid").addEventListener("click", e => {
   }
 });
 
-/* 
-   Export
- */
+/* Export*/
 
 $("#btnExport").addEventListener("click", () => {
   if (!books.length) {
@@ -309,9 +298,7 @@ $("#btnExport").addEventListener("click", () => {
   notify(`Exported ${books.length} ${books.length === 1 ? "book" : "books"}.`);
 });
 
-/* 
-   Import
- */
+/*Import*/
 
 /* A record is usable only if it has at least a title or an author. */
 const looksLikeBook = value =>
@@ -399,9 +386,7 @@ function describeResult({ added, updated }) {
   return parts.length ? `Import complete: ${parts.join(", ")}.` : "Nothing changed.";
 }
 
-/*
-   Import — file picker, then the three-way dialog
-*/
+/* Import — */
 
 const importModal = new bootstrap.Modal("#importModal");
 let pendingImport = null;
