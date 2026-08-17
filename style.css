@@ -52,7 +52,7 @@ h1, h2, h3, .display-face {
 }
 
 .stat .number { font-family: 'Fraunces', serif; font-size: 1.75rem; font-weight: 700; line-height: 1; }
-.stat .label { font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--grey); }
+.stat .label { font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--black); }
 
 /* Form controls */
 .form-control, .form-select { background: #fff; border-color: var(--border); color: var(--ink); }
@@ -99,7 +99,7 @@ h1, h2, h3, .display-face {
 
 .card-body-custom { padding: .9rem 1rem; flex: 1 1 auto; display: flex; flex-direction: column; gap: .35rem; }
 .book-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.05rem; line-height: 1.25; margin: 0; }
-.author, .meta { font-size: .85rem; color: var(--grey); margin: 0; }
+.author, .meta { font-size: .85rem; color: var(--black); margin: 0; }
 
 /* Status badges */
 .badge-status {
